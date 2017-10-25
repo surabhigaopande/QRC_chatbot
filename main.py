@@ -24,7 +24,7 @@ wifi_by_url = {}
 
 
 # Read in wifi tech and features.
-with open('protocols.csv', 'rb') as wifi_file:
+with open('features.csv', 'rb') as wifi_file:
   feature_reader = csv.reader(wifi_file)
 
   # Skip the header line.
