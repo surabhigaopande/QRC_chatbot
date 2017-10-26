@@ -33,9 +33,9 @@ with open('features.csv', 'rb') as wifi_file:
   # Each line of the csv has the format
   # "technology, feature, url".
   for row in feature_reader:
-    feature = row[0]
-    tech = row[1]
-    url= row[2]
+    feature = str(row[0])
+    tech = str(row[1])
+    url= str(row[2])
     wifi_object = (feature, tech, url)
     wifi.append(wifi_object)
     normalized_tech = tech.lower()
