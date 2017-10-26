@@ -58,9 +58,9 @@ def _get_feature():
   if parameters:
     for key, value in parameters.items():
       if key.lower() == 'tech':
-        author = unicodedata.normalize('NFKC', value).lower()
+        tech = unicodedata.normalize('NFKC', value).lower()
       elif key.lower() == 'url':
-        topic = unicodedata.normalize('NFKC', value).lower()
+        url = unicodedata.normalize('NFKC', value).lower()
       else:
         raise BadRequestError('Unrecognized parameter in request: ' + key)
 
