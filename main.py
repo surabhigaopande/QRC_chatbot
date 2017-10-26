@@ -37,9 +37,7 @@ with open('features.csv', 'rb') as quotes_file:
   for row in quotes_reader:
     quote = row[0]
     author = row[1]
-    bio = row[4]
-    topics = tuple(x.lower().strip() for x in row[7].split(','))
-    quote_object = (quote, author, topics)
+    quote_object = (quote, author)
     quotes.append(quote_object)
     normalized_author = author.lower()
     if normalized_author not in quotes_by_author:
