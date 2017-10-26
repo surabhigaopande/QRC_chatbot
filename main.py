@@ -70,19 +70,9 @@ def _get_feature():
     if tech in wifi_by_tech:
       applicable_tech_features = set(wifi_by_tech[tech])
   else:
-    applicable_tech_features = set(feature)
+    applicable_tech_features = set(wifi)
 
-  # # Find the set of quotes on the given topic (all quotes if not given).
-  # applicable_topic_quotes = set()
-  # if topic:
-    # if topic in quotes_by_topic:
-      # applicable_topic_quotes = set(quotes_by_topic[topic])
-  # else:
-    # applicable_topic_quotes = set(quotes)
-
-  # # The matching quotes are in the intersection of the two sets.
-  # applicable_quotes = applicable_author_quotes.intersection(applicable_topic_quotes)
-
+  
   # # Return None if there are no matching quotes.
   if len(applicable_tech_features) == 0:
      return None
