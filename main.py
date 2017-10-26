@@ -55,6 +55,7 @@ def _get_feature():
   tech = None
   url = None
   parameters = request.json['result']['parameters']
+  print "paramaters is "+str(parameters)
   if parameters:
     for key, value in parameters.items():
       if key.lower() == 'tech':
@@ -82,27 +83,6 @@ def _get_feature():
 
   return feature_to_return
 
-# # Returns the bio of the author specified in the parameters as a string, or
-# # None if there is no matching author.
-# def _get_bio():
-  # # Extract the author parameter. For robustness, the parameter name can be
-  # # capitalized in any way.
-  # parameters = request.json['result']['parameters']
-  # author = None
-  # for key, value in parameters.items():
-    # if key.lower() == 'author':
-      # author = unicodedata.normalize('NFKC', value).lower()
-    # else:
-      # raise BadRequestError('Unrecognized parameter in request: ' + key)
-
-  # if not author:
-    # raise BadRequestError('No author parameter provided in request for bio.')
-
-  # # Return the bio if we have it, None otherwise.
-  # if author:
-    # return bio_by_author.get(author)  # returns None if key does not exist
-  # else:
-    # return None
 
 class FeatureSearch(Resource):
   # Handles a request from API.AI. The relevant part of the body is:
