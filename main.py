@@ -84,8 +84,8 @@ def _get_feature():
   # applicable_quotes = applicable_author_quotes.intersection(applicable_topic_quotes)
 
   # # Return None if there are no matching quotes.
-  # if len(applicable_quotes) == 0:
-    # return None
+  if len(applicable_quotes) == 0:
+     return None
 
   # Return one of the matching quotes randomly.
   feature_to_return = random.choice(applicable_tech_features)
@@ -201,8 +201,8 @@ class FeatureSearch(Resource):
       response.status_code = 400
       return response
 
-# Register the wifisearch endpoint to be handled by the FeatureSearch class.
-api.add_resource(FeatureSearch, '/wifisearch')
+# Register the featuresearch endpoint to be handled by the FeatureSearch class.
+api.add_resource(FeatureSearch, '/featuresearch')
 
 if __name__ == '__main__':
   app.run()
