@@ -84,7 +84,7 @@ def _get_feature():
   # applicable_quotes = applicable_author_quotes.intersection(applicable_topic_quotes)
 
   # # Return None if there are no matching quotes.
-  if len(applicable_quotes) == 0:
+  if len(applicable_tech_features) == 0:
      return None
 
   # Return one of the matching quotes randomly.
@@ -160,7 +160,7 @@ class FeatureSearch(Resource):
 
       elif action == 'get_feature_response':
         feature = _get_feature()
-        if quote:
+        if feature:
           response = 'Here is an interesting WiFi feature for the ' + feature[1] + ' technology : ' + feature[1]
         else:
           response = 'I have no matching WiFi feature.'
