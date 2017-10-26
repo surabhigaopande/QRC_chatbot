@@ -50,6 +50,7 @@ class BadRequestError(ValueError):
 # Returns a wifi feature object matching the parameters of the request, or None if
 # there are no matching features.
 def _get_feature():
+  return random.choice(set(wifi))
   # Extract the tech and url parameters. For robustness, the parameter
   # names can be capitalized in any way.
   tech = None
